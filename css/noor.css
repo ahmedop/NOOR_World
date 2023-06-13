@@ -1,0 +1,246 @@
+/* Start Defining Variables */
+:root {
+    --main-color: #2196F3;
+    --main-font-color: #000;
+    --secondry-font-color: #777777;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --secondry-bg-color: #ececec;
+}
+
+/* End Defining Variables */
+
+
+/* Start Global rules */
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: Cairo, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* small screens */
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+
+}
+
+/* medium screens */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+
+}
+
+/* large screens */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+
+}
+
+/* End Global rules */
+
+/* Start Main Design Components  */
+.special-title {}
+
+/* End Main Design Components  */
+
+/* Start Header Styling */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header .container a.logo {
+    color: var(--main-color);
+    font-weight: 800;
+    font-size: 30px;
+}
+
+header .container ul.main-list {
+    display: flex;
+    max-width: 100%;
+
+}
+
+header .container ul.main-list li.first {
+    padding: 20px 20px;
+    position: relative;
+    font-size: 18px;
+
+}
+
+header .container ul.main-list li.first a.link::after {
+    content: "";
+    width: 0px;
+    height: 3px;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+header .container ul.main-list li.first:hover a {
+    color: var(--main-color);
+}
+
+header .container ul.main-list li.first:hover {
+    background-color: var(--secondry-bg-color);
+}
+
+header .container ul.main-list li.first:hover a::after {
+    width: 100%;
+}
+
+@media (max-width:768px) {
+
+    header .container {
+        flex-direction: column;
+    }
+
+    header .container ul.main-list li.first {
+        font-size: 14px;
+        padding: 10px 10px;
+    }
+
+    header .container a.logo {
+        padding: 20px 20px 10px 20px;
+    }
+}
+
+/* End Header Styling */
+
+/* Start Other Links list  */
+header .container ul li.first.other {
+    position: relative;
+}
+
+.other-links {
+    position: absolute;
+    right: 0px;
+
+    display: none;
+}
+
+.other-links .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    border-bottom: 3px solid var(--main-color);
+    /* display: none; */
+}
+
+.other-links .container ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.other-links .container ul li {
+    width: calc((100% - 40px)/2);
+    padding: 10px;
+    border-bottom: 1px solid #DDD;
+    position: relative;
+}
+
+.other-links .container ul li::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0;
+    left: 0px;
+    top: 0px;
+    background-color: var(--secondry-bg-color);
+    z-index: -1;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.other-links .container ul li:hover::after {
+    width: 100%;
+}
+
+.other-links .container ul li a {
+    color: var(--main-color);
+    font-weight: 800;
+}
+
+.other-links .container ul i {
+    color: var(--main-color);
+    padding-right: 20px;
+    width: 30px;
+}
+
+@media (max-width:768px) {
+    .other-links .container img {
+        display: none;
+    }
+
+    .other-links {
+        width: 300px;
+    }
+
+    .other-links .container ul {
+        flex-direction: column;
+        width: 1fr;
+    }
+
+    .other-links .container ul li {
+        width: 100%;
+    }
+}
+
+/* medium screens */
+@media (max-width:992px) {
+    .other-links .container img {
+        display: none;
+    }
+
+    .other-links .container ul {
+        width: 100%;
+    }
+
+}
+
+header .container ul li.other:hover .other-links {
+    display: block;
+}
+
+/* End Other Links list  */
