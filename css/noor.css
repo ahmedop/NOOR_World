@@ -76,7 +76,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    position: relative;
 }
 
 header .container a.logo {
@@ -85,20 +85,19 @@ header .container a.logo {
     font-size: 30px;
 }
 
-header .container ul.main-list {
+header .container ul {
     display: flex;
-    max-width: 100%;
-
 }
 
-header .container ul.main-list li.first {
-    padding: 20px 20px;
+
+header .container ul li.main a.main {
     position: relative;
     font-size: 18px;
-
+    padding: 20px 20px;
+    display: block;
 }
 
-header .container ul.main-list li.first a.link::after {
+header .container ul li.main a.main::after {
     content: "";
     width: 0px;
     height: 3px;
@@ -113,15 +112,15 @@ header .container ul.main-list li.first a.link::after {
     -o-transition: .5s;
 }
 
-header .container ul.main-list li.first:hover a {
+header .container ul li.main:hover a.main {
     color: var(--main-color);
 }
 
-header .container ul.main-list li.first:hover {
+header .container ul li.main:hover {
     background-color: var(--secondry-bg-color);
 }
 
-header .container ul.main-list li.first:hover a::after {
+header .container ul li.main:hover a.main::after {
     width: 100%;
 }
 
@@ -131,9 +130,9 @@ header .container ul.main-list li.first:hover a::after {
         flex-direction: column;
     }
 
-    header .container ul.main-list li.first {
-        font-size: 14px;
+    header .container ul li.main a.main {
         padding: 10px 10px;
+        font-size: 14px;
     }
 
     header .container a.logo {
@@ -141,43 +140,39 @@ header .container ul.main-list li.first:hover a::after {
     }
 }
 
-/* End Header Styling */
+
 
 /* Start Other Links list  */
-header .container ul li.first.other {
-    position: relative;
-}
 
 .other-links {
     position: absolute;
+    width: 100%;
     right: 0px;
-
-    display: none;
-}
-
-.other-links .container {
     display: flex;
     justify-content: space-between;
+    gap: 40px;
     padding: 30px;
     border-bottom: 3px solid var(--main-color);
-    /* display: none; */
+    z-index: -1;
+    opacity: 0;
 }
 
-.other-links .container ul {
+.other-links ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: stretch;
+    column-gap: 20px;
 }
 
-.other-links .container ul li {
+.other-links ul li {
     width: calc((100% - 40px)/2);
     padding: 10px;
     border-bottom: 1px solid #DDD;
     position: relative;
 }
 
-.other-links .container ul li::after {
+.other-links ul li::after {
     content: "";
     position: absolute;
     height: 100%;
@@ -193,54 +188,45 @@ header .container ul li.first.other {
     -o-transition: .5s;
 }
 
-.other-links .container ul li:hover::after {
+.other-links ul li:hover::after {
     width: 100%;
 }
 
-.other-links .container ul li a {
+.other-links ul li a {
     color: var(--main-color);
     font-weight: 800;
 }
 
-.other-links .container ul i {
+.other-links ul i {
     color: var(--main-color);
     padding-right: 20px;
     width: 30px;
 }
 
+header .container ul li.last:hover .other-links {
+    z-index: 100;
+    opacity: 1;
+}
+
 @media (max-width:768px) {
-    .other-links .container img {
-        display: none;
-    }
-
-    .other-links {
-        width: 300px;
-    }
-
-    .other-links .container ul {
+    .other-links ul {
         flex-direction: column;
-        width: 1fr;
     }
 
-    .other-links .container ul li {
+    .other-links ul li {
         width: 100%;
     }
 }
 
-/* medium screens */
 @media (max-width:992px) {
-    .other-links .container img {
+    .other-links img {
         display: none;
     }
 
-    .other-links .container ul {
+    .other-links ul {
         width: 100%;
     }
-
-}
-
-header .container ul li.other:hover .other-links {
-    display: block;
 }
 
 /* End Other Links list  */
+/* End Header Styling */
