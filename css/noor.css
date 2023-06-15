@@ -243,8 +243,6 @@ a.up i {
     }
 }
 
-
-
 a.up:hover i {
     transform: scale(1.5);
     -webkit-transform: scale(1.5);
@@ -731,6 +729,175 @@ header .container ul li.last:hover .other-links {
 .features {
     padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
+}
+
+.features .container .parent {
+    padding-top: var(--main-padding);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.features .container .parent .box {
+    overflow: hidden;
+    border: 1px solid #DDD;
+}
+
+.features .container .parent .box .image {
+    position: relative;
+    overflow: hidden;
+}
+
+.features .container .parent .box .image::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: .5;
+}
+
+.features .container .parent .box.red .image::before {
+    background-color: red;
+}
+
+.features .container .parent .box.green .image::before {
+    background-color: #009688;
+}
+
+.features .container .parent .box.blue .image::before {
+    background-color: #03A9F4;
+}
+
+.features .container .parent .box .image::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent transparent #FFF transparent;
+    border-width: 0px 0px 150px 500px;
+    background-color: transparent;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+
+.features .container .parent .box:hover .image::after {
+    border-width: 0px 500px 150px 0px;
+}
+
+.features .container .parent .box .image img {
+    max-width: 100%;
+
+}
+
+.features .container .parent .box .text {
+    text-align: center;
+    padding: 30px;
+}
+
+.features .container .parent .box .text h2 {
+    font-size: 32px;
+    width: fit-content;
+    margin: 0px auto;
+    padding-bottom: 20px;
+
+}
+
+.features .container .parent .box.red .text h2 {
+    border-bottom: 5px solid red;
+}
+
+.features .container .parent .box.green .text h2 {
+    border-bottom: 5px solid #009688;
+}
+
+.features .container .parent .box.blue .text h2 {
+    border-bottom: 5px solid #03A9F4;
+}
+
+.features .container .parent .box .text p {
+    color: var(--secondry-font-color);
+    line-height: 2;
+    padding: 30px 0px;
+    font-size: 20px;
+}
+
+.features .container .parent .box .text a {
+    padding: 10px 25px;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 25px;
+    font-weight: 800;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    position: relative;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.features .container .parent .box.red .text a {
+    color: red;
+    border: 3px solid red;
+}
+
+.features .container .parent .box.green .text a {
+    color: #009688;
+    border: 3px solid #009688;
+}
+
+.features .container .parent .box.blue .text a {
+    color: #03A9F4;
+    border: 3px solid #03A9F4;
+}
+
+.features .container .parent .box .text a::before {
+    content: "";
+    height: 100%;
+    width: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    z-index: -1;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.features .container .parent .box.red .text a::before {
+    background-color: red;
+}
+
+.features .container .parent .box.green .text a::before {
+    background-color: #009688;
+}
+
+.features .container .parent .box.blue .text a::before {
+    background-color: #03A9F4;
+}
+
+.features .container .parent .box:hover .text a {
+    color: #FFF;
+}
+
+.features .container .parent .box:hover .text a::before {
+    width: 100%;
 }
 
 /* End Features Section */
