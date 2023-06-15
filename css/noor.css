@@ -204,13 +204,13 @@ a {
 
 /* Start Scroll me UP */
 a.up {
-    color: #FFF;
+    color: var(--main-color);
     width: 40px;
     height: 40px;
     position: fixed;
     right: 0px;
     bottom: 20px;
-    background-color: var(--main-color);
+    background-color: transparent;
     border: none;
     padding: 5px;
     border-radius: 50%;
@@ -252,6 +252,7 @@ a.up:hover i {
     -ms-transform: scale(1.5);
     -o-transform: scale(1.5);
 }
+
 /* End Scroll me UP */
 /* End Main Design Components  */
 
