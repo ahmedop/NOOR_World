@@ -901,3 +901,77 @@ header .container ul li.last:hover .other-links {
 }
 
 /* End Features Section */
+
+/* Start Testimonials Section */
+.testimonials {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-color: var(--secondry-bg-color);
+}
+
+.testimonials .container .parent {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.testimonials .container .parent .box {
+    position: relative;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.testimonials .container .parent .box .image img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    outline: 10px solid var(--secondry-bg-color);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.testimonials .container .parent .box .text p {
+    padding: 10px 0px;
+    color: var(--secondry-font-color);
+}
+
+@media (max-width:768px) {
+    .testimonials .container .parent .box .image img {
+        right: 50%;
+        transform: translate(50%, -50%);
+        -webkit-transform: translate(50%, -50%);
+        -moz-transform: translate(50%, -50%);
+        -ms-transform: translate(50%, -50%);
+        -o-transform: translate(50%, -50%);
+    }
+
+    .testimonials .container .parent .box .text {
+        padding-top: 30px;
+        text-align: center;
+    }
+}
+
+/* End Testimonials Section */
+
+/* Start Team Members Section */
+.team{
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+/* End Team Members Section  */
