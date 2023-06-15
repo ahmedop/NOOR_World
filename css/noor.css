@@ -1220,3 +1220,63 @@ header .container ul li.last:hover .other-links {
 }
 
 /* End Services Section */
+
+/* Start Skills Section */
+.skills {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.skills .parent {
+    padding-top: var(--main-padding);
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills .parent .box {
+    width: 50%;
+}
+
+
+
+.skills .parent .box .skill {
+    padding-top: 20px;
+}
+
+.skills .parent .box .skill div {
+    background-color: var(--secondry-bg-color);
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.skills .parent .box .skill div span {
+    background-color: var(--main-color);
+    height: 100%;
+    display: block;
+}
+
+.skills .parent .box .skill div span::after {
+    content: attr(data-progress);
+    position: absolute;
+    color: var(--main-color);
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    right: 0px;
+    top: -35px;
+    padding: 3px;
+}
+
+@media (max-width:992px) {
+    .skills .parent .box {
+        width: 100%;
+    }
+
+    .skills .parent .image {
+        display: none;
+    }
+}
+
+/* End Skills Section */
