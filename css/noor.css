@@ -1823,3 +1823,87 @@ header .container ul li.last:hover .other-links {
 }
 
 /* End Video Section */
+
+/* Start Stats Section */
+.stats {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-image: url(../media/images/stats.jpg);
+    position: relative;
+}
+
+.stats::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    opacity: .8;
+}
+
+.stats .parent {
+    padding-top: var(--main-padding);
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.stats .parent .box {
+    background-color: #FFF;
+    position: relative;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+.stats .parent .box::before {
+    content: "";
+    position: absolute;
+    height: 0px;
+    width: 2px;
+    background-color: var(--main-color);
+    left: -2px;
+    bottom: 0px;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.stats .parent .box::after {
+    content: "";
+    position: absolute;
+    height: 0px;
+    width: 2px;
+    background-color: var(--main-color);
+    right: -2px;
+    top: 0px;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+.stats .parent .box:hover::after,
+.stats .parent .box:hover::before {
+    height: 100%;
+}
+
+.stats .parent .box h3 {
+    margin: 10px 0px;
+    font-size: 50px;
+}
+
+.stats .parent .box p {
+    color: var(--main-color);
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+/* End Stats Section */
