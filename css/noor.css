@@ -335,9 +335,9 @@ header .container ul li.main:hover a.main::after {
     position: absolute;
     width: 100%;
     right: 0px;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
     padding: 30px;
     border-bottom: 3px solid var(--main-color);
     z-index: -1;
@@ -345,8 +345,13 @@ header .container ul li.main:hover a.main::after {
     background-color: #FFF;
 }
 
+.other-links .image img {
+    max-width: 100%;
+}
+
 .other-links ul {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
@@ -354,7 +359,7 @@ header .container ul li.main:hover a.main::after {
 }
 
 .other-links ul li {
-    width: calc((100% - 40px)/2);
+
     padding: 10px;
     border-bottom: 1px solid #DDD;
     position: relative;
@@ -401,15 +406,21 @@ header .container ul li.last:hover .other-links {
         flex-direction: column;
     }
 
+    .other-links {
+        gap: 0px;
+    }
+
     .other-links ul li {
         width: 100%;
     }
 }
 
 @media (max-width:992px) {
-    .other-links img {
+    .other-links .image {
         display: none;
     }
+
+    .other-links {}
 
     .other-links ul {
         width: 100%;
@@ -1575,6 +1586,7 @@ header .container ul li.last:hover .other-links {
 
 .pricing .dot-down {
     background-image: url(../media/images/dots.png);
+    background-size: cover;
     position: absolute;
     bottom: 0px;
     left: -50px;
@@ -1829,6 +1841,7 @@ header .container ul li.last:hover .other-links {
     padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
     background-image: url(../media/images/stats.jpg);
+    background-size: cover;
     position: relative;
 }
 
@@ -1907,3 +1920,249 @@ header .container ul li.last:hover .other-links {
 }
 
 /* End Stats Section */
+
+/* Start Discount Section */
+.discount {
+    padding-top: var(--main-padding);
+    display: flex;
+
+}
+
+.discount .left {
+    background-image: url(../media/images/discount-background1.jpg);
+    background-size: cover;
+    width: 50%;
+    position: relative;
+    animation-name: change-bg;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.discount .left::before {
+    content: "";
+    background-color: var(--main-color);
+    opacity: .9;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+
+}
+
+.discount .left .text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.discount .left h1 {
+    font-size: 40px;
+    margin: 30px 0px;
+    color: #FFF;
+
+}
+
+.discount .left p {
+    width: 70%;
+    margin: 20px auto;
+    color: #FFF;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.discount .left img {
+    width: 300px;
+}
+
+@keyframes change-bg {
+    0% {
+        background-image: url(../media/images/discount-background1.jpg);
+    }
+
+    100% {
+        background-image: url(../media/images/discount-background2.jpg);
+    }
+}
+
+.discount .right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: var(--main-padding);
+}
+
+.discount .right h1 {
+    font-size: 40px;
+    margin: 30px 0;
+}
+
+.discount .right form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.discount .right form input:not(:last-of-type),
+.discount .right form textarea {
+    width: 300px;
+    background-color: var(--secondry-bg-color);
+    border: none;
+    border-bottom: 1px solid var(--secondry-font-color);
+    padding: 20px;
+}
+
+.discount .right form input[type="submit"] {
+    padding: 15px;
+    width: 300px;
+    background-color: var(--main-color);
+    color: #FFF;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+@media (max-width:992px) {
+    .discount {
+        flex-direction: column;
+    }
+
+    .discount .right,
+    .discount .left {
+        width: 100%;
+    }
+}
+
+/* End Discount Section */
+
+/* Start Footer */
+footer {
+    padding-top: var(--main-padding);
+    background-color: #000;
+}
+
+footer .container {
+    padding-bottom: var(--main-padding);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+
+
+footer .logo {
+    color: #FFF;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+footer .container .col .icon {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+footer .container .col .icon i {
+    background-color: #313131;
+    color: var(--secondry-font-color);
+    padding: 15px;
+    width: 46px;
+    height: 46px;
+}
+
+footer .container .col .icon i.fa-facebook-f:hover {
+    background-color: blue;
+}
+
+footer .container .col .icon i.fa-twitter:hover {
+    background-color: var(--main-color);
+
+}
+
+footer .container .col .icon i.fa-youtube:hover {
+    background-color: red;
+}
+
+footer .container .col p {
+    line-height: 1.5;
+    color: var(--secondry-font-color);
+    margin-top: 20px;
+}
+
+footer .container .col .image {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+footer .container .col .image img {
+    width: 75px;
+    border: 3px solid #FFF;
+}
+
+footer .container .col ul li:first-of-type {
+    padding-bottom: 20px;
+    font-size: 16px;
+}
+
+footer .container .col ul li:not(:first-of-type) {
+    padding: 20px 0px;
+}
+
+footer .container .col ul li:not(:last-of-type) {
+    border-bottom: 1px solid var(--secondry-font-color);
+}
+
+footer .container .col ul li a {
+    color: var(--secondry-font-color);
+}
+
+footer .container .col ul li:hover a {
+    color: #FFF;
+    margin-left: 20px;
+}
+
+footer .container .col ul li i {
+    color: var(--main-color) !important;
+    margin-right: 10px;
+}
+
+footer .container .col .box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin-bottom: 20px;
+}
+
+footer .container .col .box i {
+    color: var(--main-color);
+    font-size: 2em;
+    width: 32px;
+    height: 32px;
+    margin-right: 20px;
+}
+
+footer .container .col .box p {
+    margin: 0px;
+}
+
+
+footer .copy {
+    color: #FFF;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .copy span {
+    color: var(--main-color);
+    font-weight: 900;
+}
+
+/* End Footer */
